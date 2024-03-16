@@ -3,6 +3,7 @@ import { fetchGreenBalls } from "../http/index";
 
 const MainPage = () => {
   const [greenBallsPositions, setGreenBallsPositions] = useState([]);
+  const [intervalStarted, setIntervalStarted] = useState(false);
 
   function refresh() {
     fetchGreenBalls().then((data) => {
@@ -16,7 +17,10 @@ const MainPage = () => {
     });
   }
 
-  setInterval(refresh, 500);
+  if (!intervalStarted) {
+    setInterval(refresh, 500);
+    setIntervalStarted(true);
+  }
 
   return (
     <>
