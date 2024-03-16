@@ -8,7 +8,7 @@ const MainPage = () => {
     fetchGreenBalls().then((data) => {
       const arr = []
       for (let i = 0; i < data.length; i++) {
-        arr.push({id: data[i]["id"], left: `${(i % 10) * 10}vw`, top: `${Math.floor(i / 10) * 10}vh`});
+        arr.push({id: data[i]["id"], left: `${(i % 10) * 10}vw`, top: `${Math.floor(i / 10) * 15}vh`});
       }
       if (arr.length !== greenBallsPositions.length) {
         setGreenBallsPositions(arr);
