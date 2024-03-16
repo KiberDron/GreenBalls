@@ -25,6 +25,7 @@ const MainPage = () => {
           key={greenBall.id}
           style={{
             position: "absolute",
+            backgroundColor: "green",
             left: greenBall.left,
             top: greenBall.top,
             width: "100px",
