@@ -24,21 +24,20 @@ const MainPage = () => {
 
   return (
     <>
-      {greenBallsPositions.length ?
-        (greenBallsPositions.map((greenBall) => (
-          <div
-            key={greenBall.id}
-            style={{
-              position: "absolute",
-              backgroundColor: "green",
-              left: greenBall.left,
-              top: greenBall.top,
-              width: "100px",
-              height: "100px",
-              borderRadius: "50px",
-            }}>
-          </div>
-        ))) : <div></div>}
+      {greenBallsPositions.map((greenBall) => (
+        <div
+          key={greenBall.id}
+          style={{
+            position: "absolute",
+            backgroundColor: "green",
+            left: greenBall.left,
+            top: greenBall.top,
+            width: "100px",
+            height: "100px",
+            borderRadius: "50px",
+          }}>
+        </div>
+      ))}
     </>
   );
 };
