@@ -13,7 +13,7 @@ class GreenBallsController {
   }
 
   async deleteGreenBalls(req, res, next) {
-    await GreenBalls.truncate();
+    await GreenBalls.destroy({ where: {} });
     return res.json({ deleted: true });
   }
 }
