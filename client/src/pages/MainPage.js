@@ -10,12 +10,13 @@ const MainPage = () => {
       for (let i = 0; i < data.length; i++) {
         arr.push({id: data[i]["id"], left: `${i % 10}vw`, top: `${Math.floor(i / 10)}vh`});
       }
-      setGreenBallsPositions(arr);
+      if (arr.length !== greenBallsPositions.length) {
+        setGreenBallsPositions(arr);
+      }
     });
-    setTimeout(refresh, 500);
   }
 
-  refresh();
+  setInterval(refresh, 500);
 
   return (
     <>
