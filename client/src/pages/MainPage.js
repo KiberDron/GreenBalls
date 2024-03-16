@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { fetchGreenBalls } from "../http/index";
 
 const MainPage = () => {
@@ -11,7 +11,7 @@ const MainPage = () => {
       for (let i = 0; i < data.length; i++) {
         arr.push({id: data[i]["id"], left: `${(i % 10) * 10}vw`, top: `${Math.floor(i / 10) * 15}vh`});
       }
-      if (arr.length !== greenBallsPositions.length) {
+      if (arr.length > greenBallsPositions.length || !arr.length) {
         setGreenBallsPositions(arr);
       }
     });
